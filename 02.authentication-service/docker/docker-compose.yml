@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:15  # Versión del contenedor de PostgreSQL
+    container_name: CONTAINER_NAME
+    restart: always
+    environment:
+      POSTGRES_USER: USER_DATABASE         # Usuario predeterminado
+      POSTGRES_PASSWORD: USER_PASS # Contraseña del usuario
+      POSTGRES_DB: DATABASE_NAME       # Nombre de la base de datos predeterminada
+    ports:
+      - "5432:5432"  # Mapea el puerto del host al puerto del contenedor
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Persiste los datos
+    networks:
+      - app_network
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  app_network:
