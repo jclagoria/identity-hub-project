@@ -2,23 +2,23 @@ spring:
   application:
     name: authentication-service
   r2dbc:
-    url: r2dbc:<url-data_base>
-    username: NAME_USERNAME_DATABASE
-    password: SECRET_PASSWORD
+    url: r2dbc:postgresql://172.19.0.2:5432/authentication_db
+    username: postgres
+    password: ClaveSecreta123
   flyway:
     enabled: true
-    url: jdbc:<url-data_base>
-    user: NAME_USERNAME_DATABASE
-    password: SECRET_PASSWORD
+    url: jdbc:postgresql://172.19.0.2:5432/authentication_db
+    user: postgres
+    password: ClaveSecreta123
     locations: classpath:db/migration
 
 # Para JWT (ejemplo)
 jwt:
-  secret: SECRET_JWT
+  secret: rLEh01o49tV2IlwVlLlujXE7weHb2culkVIuZcbmStUAXRZ1ZnAJ2gCh8Z91eJVjSNrJcLVSAsT2iLekmD3wvYGjvuS2XpdE35cQzMUTQzoldKgPvygoNuEPvkLyNHieGZkwPJEWEwFksLsdZRgEJgoRsUH6uev3AdHbFaaxgMwQjeKnEGiXmsJEYJ7ZMqfQsbRqGEIK0H5ZcSku3ctk20CWWpDru1slVic8hDPvE5uQA6iwpbhUpe2Pg8jp2Za2
   expiration: 3600000   # 1 hora en milisegundos
 
 # Configuración de logging
 logging:
   level:
-    root: INFO
-    org.springframework: INFO
+    root: DEBUG
+    org.springframework: DEBUG

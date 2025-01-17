@@ -1,12 +1,12 @@
 services:
   postgres:
     image: postgres:15  # Versión del contenedor de PostgreSQL
-    container_name: CONTAINER_NAME
+    container_name: identity-postgres
     restart: always
     environment:
-      POSTGRES_USER: USER_DATABASE         # Usuario predeterminado
-      POSTGRES_PASSWORD: USER_PASS # Contraseña del usuario
-      POSTGRES_DB: DATABASE_NAME       # Nombre de la base de datos predeterminada
+      POSTGRES_USER: postgres         # Usuario predeterminado
+      POSTGRES_PASSWORD: ClaveSecreta123 # Contraseña del usuario
+      POSTGRES_DB: authentication_db       # Nombre de la base de datos predeterminada
     ports:
       - "5432:5432"  # Mapea el puerto del host al puerto del contenedor
     volumes:
