@@ -2,14 +2,14 @@ spring:
   application:
     name: user-management-service
   r2dbc:
-    url: r2dbc:postgresql://172.19.0.2:5432/authentication_db
-    username: postgres
-    password: ClaveSecreta123
+    url: URL-DATA-BASE
+    username: USER-DATABASE
+    password: PASSWORRD-DATABASE
 
 server:
   port: 8081
 
-# Configuración de logging
+# Configuraciï¿½n de logging
 logging:
   level:
     root: INFO
